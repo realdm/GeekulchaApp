@@ -1,0 +1,32 @@
+apply plugin: 'android'
+
+android {
+    compileSdkVersion 17
+    buildToolsVersion "20.0.0"
+
+    defaultConfig {
+        applicationId "org.geekulcha"
+        minSdkVersion 11
+        targetSdkVersion 17
+    }
+
+    packagingOptions
+    {
+        exclude 'META-INF/LICENSE.txt'
+    }
+    buildTypes {
+        release {
+            runProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    compile 'com.android.support:support-v4:+'
+    compile 'com.google.code.gson:gson:2.1'
+    compile 'joda-time:joda-time:2.2'
+    compile files('libs/picasso-1.1.1.jar')
+    compile files('libs/twitter4j-core-3.0.3.jar')
+    compile files('libs/YouTubeAndroidPlayerApi.jar')
+}
